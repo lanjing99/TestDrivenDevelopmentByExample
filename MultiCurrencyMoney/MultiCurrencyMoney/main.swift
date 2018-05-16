@@ -18,6 +18,9 @@ class Dolor {
         return Dolor(amount * multifier)
     }
     
+    static func ==(lhs: Dolor, rhs: Dolor) -> Bool {
+        return lhs.amount == rhs.amount
+    }
 }
 
 let fiveDolor = Dolor(5)
@@ -34,6 +37,10 @@ assert(10 == product.amount)
 product = fiveDolor.times(3)
 assert(15 == product.amount)
 
+//ch3 Equality
+let anotherFiveDolor = Dolor(5)
+assert(fiveDolor == anotherFiveDolor)
+assert((Dolor(5) == Dolor(6)) == false)
 
 
 
