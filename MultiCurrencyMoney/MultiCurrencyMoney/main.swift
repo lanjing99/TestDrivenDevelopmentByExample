@@ -8,34 +8,30 @@
 
 import Foundation
 
-class Dolor {
+class Money{
     init(_ amount: Int) {
         self.amount = amount
     }
-    private var amount : Int
+    internal var amount : Int
     
-    func times(_ multifier: Int) -> Dolor{
-        return Dolor(amount * multifier)
-    }
-    
-    
-    static func ==(lhs: Dolor, rhs: Dolor) -> Bool {
-        return lhs.amount == rhs.amount
+    static func ==(left: Money, right: Money) -> Bool {
+        if type(of: left) == type(of: right) && left.amount == right.amount {
+            return true
+        }else{
+            return false
+        }
     }
 }
 
-class Frank {
-    init(_ amount: Int) {
-        self.amount = amount
+class Dolor: Money {
+    func times(_ multifier: Int) -> Dolor{
+        return Dolor(amount * multifier)
     }
-    private var amount : Int
-    
+}
+
+class Frank: Money{
     func times(_ multifier: Int) -> Frank{
         return Frank(amount * multifier)
-    }
-    
-    static func ==(lhs: Frank, rhs: Frank) -> Bool {
-        return lhs.amount == rhs.amount
     }
 }
 
@@ -66,6 +62,8 @@ assert(Dolor(10) == Dolor(2*5))
 //ch5 Frankly Speaking
 assert(Frank(15) == Frank(5).times(3))
 assert(Frank(10) == Frank(5).times(2))
+
+assert((Frank(10) == Dolor(10)) == false)
 
 
 
