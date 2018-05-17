@@ -12,7 +12,7 @@ class Dolor {
     init(_ amount: Int) {
         self.amount = amount
     }
-    var amount : Int
+    private var amount : Int
     
     func times(_ multifier: Int) -> Dolor{
         return Dolor(amount * multifier)
@@ -31,18 +31,20 @@ let fiveDolor = Dolor(5)
 //fiveDolor.times(3)
 //assert(15 == fiveDolor.amount)
 
-//ch2
-var product = fiveDolor.times(2)
-assert(10 == product.amount)
-product = fiveDolor.times(3)
-assert(15 == product.amount)
+////ch2
+//var product = fiveDolor.times(2)
+//assert(10 == product.amount)
+//product = fiveDolor.times(3)
+//assert(15 == product.amount)
+//
+////ch3 Equality
+//let anotherFiveDolor = Dolor(5)
+//assert(fiveDolor == anotherFiveDolor)
+//assert((Dolor(5) == Dolor(6)) == false)
 
-//ch3 Equality
-let anotherFiveDolor = Dolor(5)
-assert(fiveDolor == anotherFiveDolor)
-assert((Dolor(5) == Dolor(6)) == false)
-
-
+//ch4 Privacy
+assert(Dolor(5) == Dolor(5))
+assert(Dolor(10) == Dolor(2*5))
 
 
 
