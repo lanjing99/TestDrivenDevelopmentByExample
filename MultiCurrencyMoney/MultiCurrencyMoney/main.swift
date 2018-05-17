@@ -11,17 +11,20 @@ import Foundation
 class Money{
     
     static func dolor(_ amount: Int) -> Dolor{
-        return Dolor(amount)
+        return Dolor(amount: amount, currency: "USD")
     }
     
     static func frank(_ amount: Int) -> Frank{
-        return Frank(amount)
+        return Frank(amount: amount, currency: "CHF")
     }
     
-    init(_ amount: Int) {
+    init(amount: Int, currency: String) {
         self.amount = amount
+        self.currency = currency
     }
     internal var amount : Int
+    
+    var currency: String
     
     static func ==(left: Money, right: Money) -> Bool {
         if type(of: left) == type(of: right) && left.amount == right.amount {
@@ -34,18 +37,20 @@ class Money{
 
 class Dolor: Money {
     func times(_ multifier: Int) -> Money{
-        return Dolor(amount * multifier)
+        return Money.dolor(amount * multifier)
     }
+    
 }
 
 class Frank: Money{
     func times(_ multifier: Int) -> Money{
-        return Frank(amount * multifier)
+        return Money.frank(amount * multifier)
     }
+    
 }
 
 
-let fiveDolor = Dolor(5)
+//let fiveDolor = Dolor(5)
 //chapter 1
 //fiveDolor.times(2)
 //degenerate objects
@@ -63,22 +68,45 @@ let fiveDolor = Dolor(5)
 //let anotherFiveDolor = Dolor(5)
 //assert(fiveDolor == anotherFiveDolor)
 //assert((Dolor(5) == Dolor(6)) == false)
-
-//ch4 Privacy
-assert(Dolor(5) == Dolor(5))
-assert(Dolor(10) == Dolor(2*5))
-
-//ch5 Frankly Speaking
-assert(Frank(15) == Frank(5).times(3))
-assert(Frank(10) == Frank(5).times(2))
-
-//ch6 refactor Money
-
-//ch7 Chapter 7. Apples and Oranges, compare with type
-assert((Frank(10) == Dolor(10)) == false)
-
-
+//
+////ch4 Privacy
+//assert(Dolor(5) == Dolor(5))
+//assert(Dolor(10) == Dolor(2*5))
+//
+////ch5 Frankly Speaking
+//assert(Frank(15) == Frank(5).times(3))
+//assert(Frank(10) == Frank(5).times(2))
+//
+////ch6 refactor Money
+//
+////ch7 Chapter 7. Apples and Oranges, compare with type
+//assert((Frank(10) == Dolor(10)) == false)
+//
+//
 //ch8 Chapter 8. Makin' Objects
 assert(Money.dolor(5) == Money.dolor(5))
 assert(Money.dolor(10) == Money.dolor(5).times(2))
+
+//
+//ch9 The times we live
+//test currency
+assert("USD" == Money.dolor(1).currency)
+assert("CHF" == Money.frank(1).currency)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
