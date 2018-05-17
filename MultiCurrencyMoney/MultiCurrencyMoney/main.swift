@@ -63,6 +63,9 @@ assert(Dolor(10) == Dolor(2*5))
 assert(Frank(15) == Frank(5).times(3))
 assert(Frank(10) == Frank(5).times(2))
 
+//ch6 refactor Money
+
+//ch7 Chapter 7. Apples and Oranges, compare with type
 assert((Frank(10) == Dolor(10)) == false)
 
 
