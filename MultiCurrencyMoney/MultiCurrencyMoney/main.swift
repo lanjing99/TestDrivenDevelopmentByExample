@@ -9,6 +9,15 @@
 import Foundation
 
 class Money{
+    
+    static func dolor(_ amount: Int) -> Dolor{
+        return Dolor(amount)
+    }
+    
+    static func frank(_ amount: Int) -> Frank{
+        return Frank(amount)
+    }
+    
     init(_ amount: Int) {
         self.amount = amount
     }
@@ -24,13 +33,13 @@ class Money{
 }
 
 class Dolor: Money {
-    func times(_ multifier: Int) -> Dolor{
+    func times(_ multifier: Int) -> Money{
         return Dolor(amount * multifier)
     }
 }
 
 class Frank: Money{
-    func times(_ multifier: Int) -> Frank{
+    func times(_ multifier: Int) -> Money{
         return Frank(amount * multifier)
     }
 }
@@ -69,6 +78,7 @@ assert(Frank(10) == Frank(5).times(2))
 assert((Frank(10) == Dolor(10)) == false)
 
 
-
-
+//ch8 Chapter 8. Makin' Objects
+assert(Money.dolor(5) == Money.dolor(5))
+assert(Money.dolor(10) == Money.dolor(5).times(2))
 
