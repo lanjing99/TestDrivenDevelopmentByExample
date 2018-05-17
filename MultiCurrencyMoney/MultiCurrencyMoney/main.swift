@@ -18,10 +18,27 @@ class Dolor {
         return Dolor(amount * multifier)
     }
     
+    
     static func ==(lhs: Dolor, rhs: Dolor) -> Bool {
         return lhs.amount == rhs.amount
     }
 }
+
+class Frank {
+    init(_ amount: Int) {
+        self.amount = amount
+    }
+    private var amount : Int
+    
+    func times(_ multifier: Int) -> Frank{
+        return Frank(amount * multifier)
+    }
+    
+    static func ==(lhs: Frank, rhs: Frank) -> Bool {
+        return lhs.amount == rhs.amount
+    }
+}
+
 
 let fiveDolor = Dolor(5)
 //chapter 1
@@ -46,6 +63,9 @@ let fiveDolor = Dolor(5)
 assert(Dolor(5) == Dolor(5))
 assert(Dolor(10) == Dolor(2*5))
 
+//ch5 Frankly Speaking
+assert(Frank(15) == Frank(5).times(3))
+assert(Frank(10) == Frank(5).times(2))
 
 
 
