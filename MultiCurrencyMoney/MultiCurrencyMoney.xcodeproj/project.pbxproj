@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A08715AF20AF9DBB003B620E /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08715AE20AF9DBB003B620E /* Money.swift */; };
+		A08715B020AF9DBB003B620E /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08715AE20AF9DBB003B620E /* Money.swift */; };
 		A0EA54E120ABC89500192F39 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EA54E020ABC89500192F39 /* main.swift */; };
 		A0EA54EE20ABC8C800192F39 /* MultiCurrencyMoneyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EA54ED20ABC8C800192F39 /* MultiCurrencyMoneyTest.swift */; };
 /* End PBXBuildFile section */
@@ -24,6 +26,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A08715AE20AF9DBB003B620E /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
 		A0EA54DD20ABC89500192F39 /* MultiCurrencyMoney */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MultiCurrencyMoney; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0EA54E020ABC89500192F39 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		A0EA54EB20ABC8C800192F39 /* MultiCurrencyMoneyTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultiCurrencyMoneyTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				A0EA54E020ABC89500192F39 /* main.swift */,
+				A08715AE20AF9DBB003B620E /* Money.swift */,
 			);
 			path = MultiCurrencyMoney;
 			sourceTree = "<group>";
@@ -172,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A08715AF20AF9DBB003B620E /* Money.swift in Sources */,
 				A0EA54E120ABC89500192F39 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -180,6 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A08715B020AF9DBB003B620E /* Money.swift in Sources */,
 				A0EA54EE20ABC8C800192F39 /* MultiCurrencyMoneyTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
